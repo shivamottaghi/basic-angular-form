@@ -13,7 +13,7 @@
 
     <!--Grid column-->
     <div class="col-md-12 mb-md-0 mb-5">
-      <form id="friend-form" name="contact-form" #friendList="ngForm">
+      <form id="friend-form" name="contact-form" #friendList="ngForm" >
 
         <!--Grid row-->
         <div class="row">
@@ -131,7 +131,7 @@
       </form>
 
       <div class="text-center text-md-left">
-        <button type="submit" name="submit" class="btn btn-primary">Send</button>
+        <button type="submit" name="submit" class="btn btn-primary" [disabled]="friendList.form.invalid">Send</button>
       </div>
       <div class="status"></div>
     </div>
