@@ -1,8 +1,8 @@
-
-server/package-lock.json
-server/package.json
+friend-list/node_modules
 server/node_modules
 .idea
+friend-list/.vscode
+
 # Logs
 logs
 *.log
