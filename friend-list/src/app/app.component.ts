@@ -10,4 +10,7 @@ export class AppComponent {
   title = 'friend-list';
   languagesArr = ['html' , 'css' , 'javaScript' , 'php'];
   friend = new Friend( '',"" , "" , 0 , "" , "");
+  submitForm(){
+    console.log(this.friend);
+  }
 }

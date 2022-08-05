@@ -13,7 +13,7 @@
 
     <!--Grid column-->
     <div class="col-md-12 mb-md-0 mb-5">
-      <form id="friend-form" name="contact-form" #friendList="ngForm" >
+      <form id="friend-form" name="contact-form" #friendList="ngForm" novalidate >
 
         <!--Grid row-->
         <div class="row">
@@ -32,6 +32,7 @@
                      required
                      [class.error]="firstName.invalid && firstName.touched">
             </div>
+            <p *ngIf="firstName.invalid && firstName.touched" class="error-text">Invalid field!</p>
           </div>
           <!--Grid column-->
 
@@ -51,6 +52,7 @@
                      [class.error]="lastName.invalid && lastName.touched">
 
             </div>
+            <p *ngIf="lastName.invalid && lastName.touched" class="error-text">Invalid field!</p>
           </div>
 
           <div class="col-md-6">
@@ -59,12 +61,14 @@
               <input #phoneNumber="ngModel"
                      [(ngModel)]="friend.phoneNumber"
                      type="tel"
-                     pattern="^(((+|00)32[ ]?(?:(0)[ ]?)?)|0){1}(4(60|[789]\d)/?(\s?\d{2}.?){2}(\s?\d{2})|(\d/?\s?\d{3}|\d{2}/?\s?\d{2})(.?\s?\d{2}){2})$"                     id="phone"
+                     pattern="^(((\+|00)32[ ]?(?:\(0\)[ ]?)?)|0){1}(4(60|[789]\d)\/?(\s?\d{2}\.?){2}(\s?\d{2})|(\d\/?\s?\d{3}|\d{2}\/?\s?\d{2})(\.?\s?\d{2}){2})$"
+                     id="phone"
                      name="phoneNumber"
                      class="form-control"
                      required
                      [class.error]="phoneNumber.invalid && phoneNumber.touched">
             </div>
+            <p *ngIf="phoneNumber.invalid && phoneNumber.touched" class="error-text">Invalid field!</p>
           </div>
           <!--Grid column-->
         </div>
@@ -84,6 +88,7 @@
                      [class.error]="email.invalid && email.touched">
 
             </div>
+            <p *ngIf="email.invalid && email.touched" class="error-text">Invalid field!</p>
           </div>
         </div>
 
@@ -123,7 +128,7 @@
                         required
                         [class.error]="message.invalid && message.touched"></textarea>
             </div>
-
+            <p *ngIf="message.invalid && message.touched" class="error-text">Invalid field!</p>
           </div>
         </div>
         <!--Grid row-->
@@ -131,7 +136,7 @@
       </form>
 
       <div class="text-center text-md-left">
-        <button type="submit" name="submit" class="btn btn-primary" [disabled]="friendList.form.invalid">Send</button>
+        <button type="submit" name="submit" class="btn btn-primary" [disabled]="friendList.form.invalid" (click)="submitForm()">Send</button>
       </div>
       <div class="status"></div>
     </div>
