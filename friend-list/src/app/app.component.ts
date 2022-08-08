@@ -48,6 +48,7 @@ export class AppComponent {
     });
     //this.allFriends = await response.json();
     let data = await response.json();
+    this.allFriends = [];
     data.forEach( (el:any ) =>{
       const newFriend = new Friend(el.firstName , el.lastName , el.email ,el.phoneNumber, el.message ,el.favLang);
       this.allFriends.push(newFriend);

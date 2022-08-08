@@ -80,7 +80,7 @@
               <input #email="ngModel"
                      [(ngModel)]="friend.email"
                      type="email"
-                     pattern="[a-zA-Z]+"
+                     pattern='^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
                      id="email"
                      name="email"
                      class="form-control"
@@ -146,4 +146,11 @@
   </div>
 
 </section>
+<div *ngFor="let friend of allFriends">
+  <h4>{{friend.firstName}} {{friend.lastName}}</h4>
+  <h6>{{friend.phoneNumber}}</h6>
+  <h6>{{friend.email}}</h6>
+  <p>{{friend.favLang}}</p>
+  <p>{{friend.message}}</p>
+</div>
 
