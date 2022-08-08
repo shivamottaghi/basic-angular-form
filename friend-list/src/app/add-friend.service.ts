@@ -7,7 +7,7 @@ import { Observable, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class AddFriendService {
-  private url: string = 'http://localhost:6969/allFriends';
+  private url: string = 'http://localhost:6969/addfriends';
   //private url: String = '';
 
   constructor(private http: HttpClient)  {}

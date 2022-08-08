@@ -33,7 +33,7 @@ app.get('/allFriends' , (request , response)=> {
     response.send({allFriends});
 });
 
-app.post('/allFriends' , (request , response)=>{
+app.post('/addfriends' , (request , response)=>{
     allFriends.push(request.body);
 });
 
